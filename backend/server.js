@@ -5,6 +5,7 @@ import authRouter from './routes/authRoutes.js'
 import historyRouter from './routes/historyRoutes.js'
 import tipsRouter from './routes/tipsRoutes.js'
 import transactionsRouter from './routes/transactionsRoutes.js'
+import logger from './middleware/logger.js'
 
 // Load environment variables
 dotenv.config()
@@ -14,6 +15,7 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(logger)
 
 app.get('/health-check', (req, res) => {
     res.send({
