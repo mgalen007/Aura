@@ -2,11 +2,11 @@
 
 **Main API**
     [/transactions] -> Data about transactions: income and expenses
-        GET [/transactions/{userID}] -> Fetch the transactions of a given user
+        GET [/transactions/{userID}] -> Get the transactions of a given user
+        GET [/transactions/{transactionID}] -> Get a transaction by its ID 
         POST [/transactions/{userID}] -> Create a new transaction
         DELETE [/transactions/{transactionID}] -> Delete a transaction from history
         PUT [/transactions/{transactionID}] -> Update / Change transaction data
-        PATCH [/transactions/{transactionID}] -> Update / Change transaction data
 
     [/tips] -> personalized economy tips
         GET [/tips?limit={n}] -> Get n number of tips (maximum 10)
