@@ -7,6 +7,7 @@ import tipsRouter from './routes/tipsRoutes.js'
 import transactionsRouter from './routes/transactionsRoutes.js'
 import logger from './middleware/logger.js'
 import connectDB from './utils/db.js'
+import authMiddleware from './middleware/authMiddleware.js'
 
 // Load environment variables
 dotenv.config()
@@ -31,12 +32,12 @@ app.get('/health-check', (req, res) => {
 
 // Mount routes
 app.use('/auth', authRouter)
-app.use('/transactions', transactionsRouter)
+app.use('/transactions', authMiddleware, transactionsRouter)
 app.use('/tips', tipsRouter)
-app.use('/history', historyRouter)
+app.use('/history', authMiddleware, historyRouter)
 
 // 404 handler middleware
-app.use((req, res, next) => {
+app.use((req, res) => {
     res.status(404).json({
         error: "Resource not found"
     })
