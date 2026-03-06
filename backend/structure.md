@@ -2,9 +2,9 @@
 
 **Main API**
     [/transactions] -> Data about transactions: income and expenses
-        GET [/transactions/:userID] -> Get the transactions of a given user
+        GET [/transactions] -> Get the transactions of a given user
         GET [/transactions/:transactionID] -> Get a transaction by its ID 
-        POST [/transactions/:userID] -> Create a new transaction
+        POST [/transactions] -> Create a new transaction
         DELETE [/transactions/:transactionID] -> Delete a transaction from history
         PUT [/transactions/:transactionID] -> Update / Change transaction data
     [/tips] -> personalized economy tips
