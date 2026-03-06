@@ -7,10 +7,8 @@
         POST [/transactions/{userID}] -> Create a new transaction
         DELETE [/transactions/{transactionID}] -> Delete a transaction from history
         PUT [/transactions/{transactionID}] -> Update / Change transaction data
-
     [/tips] -> personalized economy tips
         GET [/tips?limit={n}] -> Get n number of tips (maximum 10)
-
     [/history] -> the history of all transactions
         GET [/history/{userID}?period={key}] -> Get the history of user transactions
                                                 in a period of key (day | month | year)

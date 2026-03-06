@@ -6,12 +6,17 @@ import historyRouter from './routes/historyRoutes.js'
 import tipsRouter from './routes/tipsRoutes.js'
 import transactionsRouter from './routes/transactionsRoutes.js'
 import logger from './middleware/logger.js'
+import connectDB from './utils/db.js'
 
 // Load environment variables
 dotenv.config()
 
 const PORT = process.env.PORT
+const dbURI = process.env.MONGODB_URI
 const app = express()
+
+// Connect the database
+connectDB(dbURI)
 
 app.use(cors())
 app.use(express.json())
