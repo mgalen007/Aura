@@ -1,16 +1,17 @@
 import express from 'express'
 import transactionsController from '../controllers/transactionsController.js'
+import transactionValidator from '../middleware/transactionValidator.js'
 
 const router = express.Router()
 
 // Define the transaction endpoints and the corresponding handlers
-router.route('/{userID}')
+router.route('/')
     .get(transactionsController.getTransactionsByUser)
-    .post(transactionsController.createTransaction)
+    .post(transactionValidator, transactionsController.createTransaction)
 
-router.route('/{transactionID}')
+router.route('/:transactionID')
     .get(transactionsController.getTransactionById)
-    .put(transactionsController.updateTransaction)
+    .put(transactionValidator, transactionsController.updateTransaction)
     .delete(transactionsController.deleteTransaction)
 
 
