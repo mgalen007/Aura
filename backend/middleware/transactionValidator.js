@@ -1,7 +1,13 @@
 import transactionSchema from '../schemas/transactionSchema.js'
+import mongoose from 'mongoose'
 
 async function validateTransaction(req, res, next) {
     try {
+        if (!mongoose.Types.ObjectId.isValid(req.params.transactionID)) {
+            return res.status(400).json({
+                error: 'Invalid transaction ID'
+            })
+        }
         if (!req.body) {
             res.status(400).json({
                 error: 'Invalid transaction'

@@ -1,4 +1,5 @@
 import Transaction from '../models/Transaction.js'
+import mongoose from 'mongoose'
 
 const getTransactionsByUser = async (req, res) => {
     try {
@@ -20,6 +21,11 @@ const getTransactionsByUser = async (req, res) => {
 
 const getTransactionById = async (req, res) => {
     try {
+        if (!mongoose.Types.ObjectId.isValid(req.params.transactionID)) {
+            return res.status(400).json({
+                error: 'Invalid transaction ID'
+            })
+        }
         const transaction = await Transaction.findOne({ _id: req.params.transactionID })
         if (!transaction) {
             return res.status(404).json({
@@ -53,7 +59,27 @@ const createTransaction = async (req, res) => {
     }
 }
 
-const updateTransaction = () => null
+const updateTransaction = async (req, res) => {
+    try {
+        const updatedTransaction = req.value
+        const oldTransaction = await Transaction.findOne({ _id: req.params.transactionID })
+        if (!oldTransaction) {
+            return res.status(404).json({
+                error: 'Transaction not found'
+            })
+        }
+        Object.keys(updatedTransaction).forEach(field => {
+            oldTransaction[field] = updatedTransaction[field]
+        })
+        await oldTransaction.save()
+        res.json(oldTransaction)
+    } catch(error) {
+        console.error(error)
+        res.status(500).json({
+            error: 'An error occurred, try again later'
+        })
+    }
+}
 
 const deleteTransaction = async (req, res) => {
     try {
