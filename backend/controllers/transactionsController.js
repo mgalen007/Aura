@@ -1,4 +1,4 @@
-import Transaction from '../models/User.js'
+import Transaction from '../models/Transaction.js'
 import transactionSchema from '../schemas/transactionSchema.js'
 import mongoose from 'mongoose'
 
