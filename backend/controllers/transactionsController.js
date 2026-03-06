@@ -20,10 +20,10 @@ const getTransactionsByUser = async (req, res) => {
 
 const getTransactionById = async (req, res) => {
     try {
-        const transaction = await Transaction.find({ id: req.params.transactionID })
-        if (transaction.userID != req.user.id) {
-            return res.status(401).json({
-                error: 'Not authorized'
+        const transaction = await Transaction.findOne({ _id: req.params.transactionID })
+        if (!transaction) {
+            return res.status(404).json({
+                error: 'Transaction not found'
             })
         }
         res.json(transaction)
@@ -37,6 +37,7 @@ const getTransactionById = async (req, res) => {
 
 const createTransaction = async (req, res) => {
     try {
+        req.value.userID = req.user.id
         const newTransaction = await Transaction.create(req.value)
         res.status(201).json(newTransaction)
     } catch(error) {
@@ -54,9 +55,17 @@ const createTransaction = async (req, res) => {
 
 const updateTransaction = () => null
 
-const deleteTransaction = (req, res) => {
+const deleteTransaction = async (req, res) => {
     try {
-        
+        const deletedTransaction = await Transaction.findOneAndDelete({id: req.params.transactionID})
+        if (!deletedTransaction) {
+            res.status(404).json({
+                error: 'Transaction not found'
+            })
+        }
+        res.status(204).json({
+            message: 'Transaction deleted successfully'
+        })
     } catch(error) {
         console.error(error)
         res.status(500).json({
