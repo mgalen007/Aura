@@ -5,6 +5,11 @@ import registerSchema from '../schemas/registerSchema.js'
 const validateAuth = (type) => async (req, res, next) => {
     if (type == 'login') {
         try {
+            if (!req.body) {
+                return res.status(400).json({
+                    error: 'Invalid request'
+                })
+            }
             const value = await loginSchema.validateAsync(req.body, { stripUnknown: true })
             req.value = value
             next()
@@ -20,6 +25,11 @@ const validateAuth = (type) => async (req, res, next) => {
         }
     } else if (type == 'register') {
         try {
+            if (!req.body) {
+                return res.status(400).json({
+                    error: 'Invalid request'
+                })
+            }
             const value = await registerSchema.validateAsync(req.body, { stripUnknown: true })
             req.value = value
             next()

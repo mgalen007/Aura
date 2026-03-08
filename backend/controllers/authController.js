@@ -9,6 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET_KEY
 
 const login = async (req, res) => {
     try {
+
         const { username, password } = req.value
         const validUser = await User.findOne({ username })
 
@@ -41,6 +42,12 @@ const register = async (req, res) => {
     try {
         const { email, username, password } = req.value
         const passwordHash = await bcrypt.hash(password, 14)
+        const user = await User.findOne({email, username, passwordHash})
+        if (user) {
+            return res.status(400).json({
+                error: 'User already exists'
+            })
+        }
         await User.create({ email, username, passwordHash })
         res.status(201).json({
             message: 'User created successfully'
