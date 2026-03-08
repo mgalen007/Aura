@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 
 async function validateTransaction(req, res, next) {
     try {
-        if (!mongoose.Types.ObjectId.isValid(req.params.transactionID)) {
+        if (!mongoose.Types.ObjectId.isValid(req.params.transactionID) && req.method == 'GET') {
             return res.status(400).json({
                 error: 'Invalid transaction ID'
             })
