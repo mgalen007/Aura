@@ -11,13 +11,25 @@ function LandingPage() {
                 sections={['Home', 'About Us', 'Services', 'Contact']}
             />
             <section
-                className="mt-18 text-center"
+                className="m-18 text-center"
             >
                 <Title 
                     heading="Your money, simplified."
                     subheading="Keep track of your money with us"
                 />
             </section> 
+            <section
+                className="text-center text-2xl font-medium"
+            >
+                <h2>
+                    <span
+                        className="font-[Gugi]"
+                    >
+                        AURA
+                    </span>
+                    &nbsp;&nbsp;is the best platform for budgeting
+                </h2>
+            </section>
         </html>
     )
 }
