@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.tsx'
 import Title from './components/Title.tsx'
 import FeatureCard from './components/FeatureCard.tsx'
 import type { IconName } from './components/FeatureCard.tsx'
+import Button from './components/Button.tsx'
 
 interface Feature {
     title: string,
@@ -10,24 +11,25 @@ interface Feature {
     icon: IconName
 }
 
+const features: Feature[] = [
+    {
+        title: 'Smart Tracking',
+        description: 'We help you track all your transactions day-to-day',
+        icon: 'eye'
+    },
+    {
+        title: 'Transaction History',
+        description: 'Get access to all your income & expense history and records',
+        icon: 'book'
+    },
+    {
+        title: 'Economy Tips',
+        description: 'Get daily tips to improve economic habits and grow your savings',
+        icon: 'money'
+    }
+]
+
 function LandingPage() {
-    const features: Feature[] = [
-        {
-            title: 'Smart Tracking',
-            description: 'We help you track all your transactions day-to-day',
-            icon: 'eye'
-        },
-        {
-            title: 'Transaction History',
-            description: 'Get access to all your income & expense history and records',
-            icon: 'book'
-        },
-        {
-            title: 'Economy Tips',
-            description: 'Get daily tips to improve economic habits and grow your savings',
-            icon: 'money'
-        }
-    ]
     return (
         <div
             className="bg-[#F8FCEF] min-h-screen"
@@ -44,12 +46,10 @@ function LandingPage() {
                 />
             </section> 
             <section
-                className="text-center text-2xl font-medium"
+                className="text-center text-2xl font-medium mt-4"
             >
                 <h2>
-                    <span
-                        className="font-[Gugi]"
-                    >
+                    <span>
                         AURA
                     </span>
                     &nbsp;&nbsp;
@@ -61,7 +61,7 @@ function LandingPage() {
                 </h2>
             </section>
             <section
-                className="flex w-[58%] mx-auto mt-12 justify-between"
+                className="flex w-[58%] mx-auto mt-15 justify-between"
             >
                 {features.map(feature => {
                     return (
@@ -73,6 +73,18 @@ function LandingPage() {
                         />
                     )
                 })}
+            </section>
+            <section
+                className="w-[21%] mx-auto flex justify-between mt-15"
+            >
+                <Button 
+                    type="primary"
+                    text="Start Budgeting"
+                />
+                <Button 
+                    type="secondary"
+                    text="See how it works"
+                />
             </section>
         </div>
     )
