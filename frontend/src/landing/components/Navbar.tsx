@@ -6,7 +6,7 @@ interface NavbarProps {
 function Navbar({ sections }: NavbarProps) {
     return (
         <nav
-            className="bg-[#F8FCEF] h-18 flex justify-between py-2 px-6 items-center shadow-sm border border-[#000]/30"
+            className="bg-[#F8FCEF] h-18 flex justify-between py-2 px-6 items-center shadow-sm border border-[#000]/30 fixed top-0 w-full"
         >
             <section>
                 <h2

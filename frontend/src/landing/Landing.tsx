@@ -32,13 +32,13 @@ const features: Feature[] = [
 function LandingPage() {
     return (
         <div
-            className="bg-[#F8FCEF] min-h-screen"
+            className="bg-[#F8FCEF] fixed top-0 w-full h-full"
         >
             <Navbar
                 sections={['Home', 'About Us', 'Services', 'Contact']}
             />
             <section
-                className="m-18 text-center"
+                className="mb-18 mt-36 text-center"
             >
                 <Title 
                     heading="Your money, simplified."
