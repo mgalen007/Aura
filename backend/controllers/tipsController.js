@@ -1,8 +1,10 @@
 import OpenAI from 'openai'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const client = new OpenAI({
     baseURL: 'https://api.groq.com/openai/v1',
-    apiKey: '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'
+    apiKey: process.env.GROQ_API_KEY
 })
 
 const createPrompt = limit => [
