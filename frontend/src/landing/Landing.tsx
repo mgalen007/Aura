@@ -5,6 +5,7 @@ import FeatureCard from './components/FeatureCard.tsx'
 import type { IconName } from './components/FeatureCard.tsx'
 import Button from './components/Button.tsx'
 import dashboardImage from '../assets/dashboard-preview.png'
+import TestimonialCard from './components/TestimonialCard.tsx'
 
 interface Feature {
     title: string,
@@ -33,7 +34,7 @@ const features: Feature[] = [
 function LandingPage() {
     return (
         <div
-            className="bg-[#F8FCEF] w-full"
+            className="bg-[#F8FCEF] w-full pb-15"
         >
             <Navbar
                 sections={['Home', 'About Us', 'Services', 'Contact']}
@@ -117,6 +118,34 @@ function LandingPage() {
                             </img>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section
+                className="w-[70%] mx-auto mt-20"
+            >
+                <h2
+                    className="font-medium text-3xl mb-12"
+                >
+                    Testimonials
+                </h2>
+                <div
+                    className="flex justify-between"
+                >
+                    <TestimonialCard 
+                        name="Ben Simmons"
+                        phrase="“  A truly outstanding platform, never have I felt so financially secure!  “"
+                        stars={5}
+                    />
+                    <TestimonialCard 
+                        name="Rowland Jr."
+                        phrase="“  The last month has been my most expensive, yet I felt backed up.  “"
+                        stars={5}
+                    />
+                    <TestimonialCard 
+                        name="Monica Hayes"
+                        phrase="“  A small piece of heaven,  please make it available for everyone. “"
+                        stars={5}
+                    />
                 </div>
             </section>
         </div>
