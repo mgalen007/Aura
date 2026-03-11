@@ -4,6 +4,7 @@ import Title from './components/Title.tsx'
 import FeatureCard from './components/FeatureCard.tsx'
 import type { IconName } from './components/FeatureCard.tsx'
 import Button from './components/Button.tsx'
+import dashboardImage from '../assets/dashboard-preview.png'
 
 interface Feature {
     title: string,
@@ -32,13 +33,13 @@ const features: Feature[] = [
 function LandingPage() {
     return (
         <div
-            className="bg-[#F8FCEF] fixed top-0 w-full h-full"
+            className="bg-[#F8FCEF] w-full"
         >
             <Navbar
                 sections={['Home', 'About Us', 'Services', 'Contact']}
             />
             <section
-                className="mb-18 mt-36 text-center"
+                className="mb-18 mt-26 text-center"
             >
                 <Title 
                     heading="Your money, simplified."
@@ -85,6 +86,38 @@ function LandingPage() {
                     type="secondary"
                     text="See how it works"
                 />
+            </section>
+            <section
+                className="w-[60%] mx-auto mt-30 mb-10 flex justify-between"
+            >
+                <div
+                    className="w-[40%]"
+                >
+                    <h2
+                        className="font-medium text-3xl"
+                    >
+                        Stop guessing where your money goes
+                    </h2>
+                    <h4
+                        className="text-black/60 font-medium text-sm w-[75%]"
+                    >
+                        Our dashboard shows your spending patterns, balances, and financial habits in real time
+                    </h4>
+                </div>
+                <div>
+                    <div
+                        className="bg-black w-[440px] h-[280px] rounded-lg flex items-center justify-center"
+                    >
+                        <div>
+                            <img
+                                src={dashboardImage} 
+                                width={420} 
+                                className="rounded-lg"
+                            >
+                            </img>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     )
