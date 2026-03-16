@@ -7,6 +7,7 @@ import Button from './components/Button.tsx'
 import dashboardImage from '../assets/dashboard-preview.png'
 import TestimonialCard from './components/TestimonialCard.tsx'
 import Navigator from './components/Navigator.tsx'
+import Footer from './components/Footer.tsx'
 
 interface Feature {
     title: string,
@@ -35,7 +36,7 @@ const features: Feature[] = [
 function LandingPage() {
     return (
         <div
-            className="bg-[#F8FCEF] w-full pb-15"
+            className="bg-[#F8FCEF] w-full"
         >
             <Navbar
                 sections={['Home', 'About Us', 'Services', 'Contact']}
@@ -149,10 +150,15 @@ function LandingPage() {
                     />
                 </div>
             </section>
-            <section>
+            <section
+                className="mb-30"
+            >
                 <Navigator 
                     nbr={5}
                 />
+            </section>
+            <section>
+                <Footer />
             </section>
         </div>
     )

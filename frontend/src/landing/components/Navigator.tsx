@@ -17,7 +17,7 @@ function Navigator({ nbr }: NavigatorProps) {
                     <div
                         key={image}
                         className={
-                            image == 1 ? (
+                            image == 2 ? (
                                 `bg-[#A2D439] h-[11px] w-[20%] border border-black/30 rounded-[50%]`
                             ) : (
                                 "h-[11px] w-[20%] border border-black/30 rounded-[50%]"                           )
