@@ -6,6 +6,7 @@ import type { IconName } from './components/FeatureCard.tsx'
 import Button from './components/Button.tsx'
 import dashboardImage from '../assets/dashboard-preview.png'
 import TestimonialCard from './components/TestimonialCard.tsx'
+import Navigator from './components/Navigator.tsx'
 
 interface Feature {
     title: string,
@@ -147,6 +148,11 @@ function LandingPage() {
                         stars={5}
                     />
                 </div>
+            </section>
+            <section>
+                <Navigator 
+                    nbr={5}
+                />
             </section>
         </div>
     )
