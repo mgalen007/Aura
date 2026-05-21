@@ -1,3 +1,4 @@
+import Button from './Button.tsx'
 
 interface NavbarProps {
     sections: string[]
@@ -23,7 +24,7 @@ function Navbar({ sections }: NavbarProps) {
                         return (
                             <li
                                 key={section}
-                                className="cursor-pointer font-bold text-[#070902]/70 hover:text-[#070902]/95"
+                                className="cursor-pointer font-bold text-[#070902]/70 hover:text-[#6D921E] transition-all delay-75 ease-out"
                             >
                                 {section}
                             </li>
@@ -32,11 +33,10 @@ function Navbar({ sections }: NavbarProps) {
                 </ul>
             </section>
             <section>
-                <button
-                    className="bg-[#A2D439] text-sm font-bold py-2 px-5 border border-black/50 rounded-lg"
-                >
-                    Get Started
-                </button>
+                <Button 
+                    type="primary"
+                    text="Get Started"
+                />
             </section>
         </nav>
     )

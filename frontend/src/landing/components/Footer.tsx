@@ -7,7 +7,7 @@ function Footer() {
             className="bg-black/10 mb-0 h-42"
         >
             <h1
-                className="text-9xl text-black/15 w-fit translate-y-6"
+                className="text-9xl text-black/15 w-fit translate-y-4"
             >
                 AURA
             </h1>
