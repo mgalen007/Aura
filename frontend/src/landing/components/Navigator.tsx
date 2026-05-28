@@ -10,7 +10,7 @@ function Navigator({ nbr }: NavigatorProps) {
     }
     return (
         <div
-            className="w-[70px] mx-auto mt-10 flex gap-1"
+            className="w-17.5 mx-auto mt-10 flex gap-1"
         >
             {images.map(image => {
                 return (
@@ -18,9 +18,9 @@ function Navigator({ nbr }: NavigatorProps) {
                         key={image}
                         className={
                             image == 2 ? (
-                                `bg-[#A2D439] h-[11px] w-[20%] border border-black/30 rounded-[50%]`
+                                `bg-[#A2D439] h-2.75 w-[20%] border border-black/30 rounded-[50%]`
                             ) : (
-                                "h-[11px] w-[20%] border border-black/30 rounded-[50%]"                           )
+                                "h-2.75 w-[20%] border border-black/30 rounded-[50%]"                           )
                         }
                     >
                     </div>

@@ -8,7 +8,7 @@ function Button({ type, text }: ButtonProps) {
     if (type == "primary") {
         return (
             <button
-                className="bg-[#A2D439] border border-[#000]/50 py-2 px-5 rounded-lg font-bold text-black/80"
+                className="bg-[#A2D439] border border-[#000]/50 py-2 px-5 rounded-lg font-bold text-black/80 hover:bg-[#BAF341] hover:text-black transition-all delay-75 ease-out cursor-pointer"
             >
                 {text}
             </button>
@@ -17,7 +17,7 @@ function Button({ type, text }: ButtonProps) {
     else if (type == "secondary") {
         return (
             <button
-                className="bg-[#FFFFFF]/50 text-black/80 font-bold border border-[#000]/50 py-2 px-5 rounded-lg" 
+                className="bg-[#FFFFFF]/30 text-black/80 font-bold border border-[#000]/50 py-2 px-5 rounded-lg hover:bg-[#FFFFFF] hover:text-black transition-all delay-75 ease-out cursor-pointer" 
             >
                 {text}
             </button>

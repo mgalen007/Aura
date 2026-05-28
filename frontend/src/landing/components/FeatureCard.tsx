@@ -18,7 +18,7 @@ interface FeatureCardProps {
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
     return (
         <div
-            className="bg-[#A2D439]/30 w-[275px] py-6 px-8 rounded-lg"
+            className="bg-[#A2D439]/30 w-[275px] py-6 px-8 rounded-lg hover:bg-[#A2D439]/60 transition-all delay-75 ease-out cursor-pointer"
         >
             <div
                 className="w-fit mx-auto mb-4"

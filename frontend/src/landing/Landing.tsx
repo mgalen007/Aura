@@ -109,7 +109,7 @@ function LandingPage() {
                 </div>
                 <div>
                     <div
-                        className="bg-black w-[440px] h-[280px] rounded-lg flex items-center justify-center"
+                        className="bg-black w-110 h-70 rounded-lg flex items-center justify-center"
                     >
                         <div>
                             <img
